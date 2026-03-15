@@ -59,14 +59,12 @@ const PRESENTATION = {
     { id: closing, label: "まとめ", time: "60-68" }
   ],
   slides: [
-    rawSlide(
-      intro,
-      wrap(`
-        <h1 class="raw-title-xl">AIがデザイナーの<br>仕事を奪う？</h1>
-        <p class="raw-sub raw-sub-strong">ゼロから見直す、ものづくりが好きな人間のためのAI論</p>
-      `),
-      "PDF page 1"
-    ),
+    {
+      agendaId: intro,
+      layout: "full-image",
+      image: "assets/seminar-260316-cover.png",
+      notes: "Seminar cover image"
+    },
     rawSlide(
       intro,
       wrap(`
