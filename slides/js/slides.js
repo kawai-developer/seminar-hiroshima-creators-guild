@@ -34,6 +34,29 @@ const pillars = "pillars";
 const action = "action";
 const closing = "closing";
 
+const agendaTimes = {
+  [intro]: "20:00-20:08",
+  [types]: "20:08-20:23",
+  [problem]: "20:23-20:44",
+  [pillars]: "20:44-21:10",
+  [action]: "21:10-21:30",
+  [closing]: "21:30-22:00"
+};
+
+const sectionDoor = (agendaId, title, sub, notes, navLabel = title.replace(/<br>/g, " ")) => ({
+  agendaId,
+  layout: "raw",
+  html: `
+    <div class="raw-wrap raw-section raw-section-door">
+      <p class="raw-section-time">${agendaTimes[agendaId]}</p>
+      <h1 class="raw-section-title">${title}</h1>
+      ${sub ? `<p class="raw-section-sub">${sub}</p>` : ""}
+    </div>
+  `,
+  notes,
+  navLabel
+});
+
 const PRESENTATION = {
   title: "AIがデザイナーの仕事を奪う？",
   subtitle: "ひろしまクリエイターズギルド AIセミナー 2026.3.16",
@@ -51,12 +74,12 @@ const PRESENTATION = {
     body: "'Noto Sans JP', sans-serif"
   },
   agenda: [
-    { id: intro, label: "導入", time: "20:00-20:08" },
-    { id: types, label: "タイプ整理", time: "20:08-20:23" },
-    { id: problem, label: "問題の正体", time: "20:23-20:44" },
-    { id: pillars, label: "3つの柱", time: "20:44-21:10" },
-    { id: action, label: "実行", time: "21:10-21:30" },
-    { id: closing, label: "まとめ", time: "21:30-22:00" }
+    { id: intro, label: "導入", time: agendaTimes[intro] },
+    { id: types, label: "タイプ整理", time: agendaTimes[types] },
+    { id: problem, label: "問題の正体", time: agendaTimes[problem] },
+    { id: pillars, label: "3つの柱", time: agendaTimes[pillars] },
+    { id: action, label: "実行", time: agendaTimes[action] },
+    { id: closing, label: "まとめ", time: agendaTimes[closing] }
   ],
   slides: [
     {
@@ -65,6 +88,7 @@ const PRESENTATION = {
       image: "assets/seminar-260316-cover.png",
       notes: "Seminar cover image"
     },
+    sectionDoor(intro, "導入", "今日の約束", "Section door: intro"),
     rawSlide(
       intro,
       wrap(`
@@ -112,14 +136,7 @@ const PRESENTATION = {
       `, "raw-wrap--left raw-wrap--narrow"),
       "PDF page 9"
     ),
-    rawSlide(
-      types,
-      `<div class="raw-wrap raw-section">
-        <h1 class="raw-section-title">あなたはどのタイプ？</h1>
-        <p class="raw-section-sub">クリエイターを3つに分けて考える</p>
-      </div>`,
-      "PDF page 10"
-    ),
+    sectionDoor(types, "タイプ整理", "あなたはどのタイプ？", "Section door: types"),
     rawSlide(
       types,
       wrap(`
@@ -228,13 +245,7 @@ const PRESENTATION = {
       `),
       "PDF page 18"
     ),
-    rawSlide(
-      problem,
-      wrap(`
-        <h1 class="raw-title-xl">問題の正体<br><span class="raw-accent">本当の敵は何か</span></h1>
-      `),
-      "PDF page 19"
-    ),
+    sectionDoor(problem, "問題の正体", "本当の敵は何か", "Section door: problem"),
     rawSlide(
       problem,
       wrap(`
@@ -311,14 +322,7 @@ const PRESENTATION = {
     ),
     imageSlide(problem, 31),
     imageSlide(problem, 32),
-    rawSlide(
-      pillars,
-      `<div class="raw-wrap raw-section">
-        <h1 class="raw-section-title">柱1: 言葉系</h1>
-        <p class="raw-section-sub">Gemini</p>
-      </div>`,
-      "PDF page 33"
-    ),
+    sectionDoor(pillars, "3つの柱", "言葉系 / 素材系 / 量産系", "Section door: pillars"),
     imageSlide(pillars, 34),
     imageSlide(pillars, 35),
     rawSlide(
@@ -367,14 +371,7 @@ const PRESENTATION = {
       `),
       "PDF page 44"
     ),
-    rawSlide(
-      action,
-      wrap(`
-        <h1 class="raw-title-lg">完璧なプロンプトはいらない。<br>必要なのは「最初の1行」だけ。</h1>
-        <p class="raw-sub raw-muted">AIの学習から「実行」へ移行するための最短ルート</p>
-      `),
-      "PDF page 45"
-    ),
+    sectionDoor(action, "実行", "明日やる1アクションを決める", "Section door: action"),
     imageSlide(action, 46),
     imageSlide(action, 47),
     rawSlide(
@@ -417,14 +414,7 @@ const PRESENTATION = {
       `),
       "PDF page 59"
     ),
-    rawSlide(
-      closing,
-      wrap(`
-        <h1 class="raw-title-lg">1%の覇気論</h1>
-        <p class="raw-sub raw-muted">AI時代における、クリエイターの価値はどこにあるか。</p>
-      `),
-      "PDF page 60"
-    ),
+    sectionDoor(closing, "まとめ", "1%の覇気論と特典案内", "Section door: closing"),
     rawSlide(
       closing,
       wrap(`
@@ -573,7 +563,9 @@ const slideNavLabels = [
   "もっと大きく、もっと鋭く"
 ];
 
+slideNavLabels.splice(1, 0, "導入");
+
 PRESENTATION.slides = PRESENTATION.slides.map((slide, index) => ({
   ...slide,
-  navLabel: slideNavLabels[index] || `Slide ${index + 1}`
+  navLabel: slide.navLabel || slideNavLabels[index] || `Slide ${index + 1}`
 }));
