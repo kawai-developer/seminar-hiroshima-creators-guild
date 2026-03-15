@@ -354,59 +354,49 @@ html, body {
 /* === Status bar (top-right) === */
 #status-bar {
   position: absolute;
-  top: 2.8cqw;
-  right: 1.5cqw;
+  top: 1.35cqw;
+  right: 4.4cqw;
   z-index: 18;
-  width: min(18cqw, 260px);
-  padding: 0.7cqw 0.85cqw;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.86);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 22px rgba(51, 51, 51, 0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 0.35cqw;
-  pointer-events: none;
-}
-
-.status-row {
+  width: min(12cqw, 170px);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.8cqw;
-}
-
-.status-row-sub {
-  font-size: clamp(0.55rem, 0.82cqw, 0.72rem);
+  gap: 0.45cqw;
+  pointer-events: none;
+  opacity: 0.68;
 }
 
 #status-agenda {
-  font-size: clamp(0.72rem, 1cqw, 0.86rem);
-  font-weight: 700;
-  color: var(--color-main);
+  display: none;
 }
 
 #status-num {
-  font-size: clamp(0.62rem, 0.92cqw, 0.8rem);
+  min-width: 3.2em;
+  font-size: clamp(0.5rem, 0.75cqw, 0.68rem);
   font-weight: 700;
-  color: var(--color-grey);
+  text-align: right;
+  letter-spacing: 0.01em;
+  color: rgba(51, 51, 51, 0.42);
 }
 
 #status-time {
-  color: var(--color-grey);
+  display: none;
 }
 
 #status-percent {
-  color: var(--color-accent);
-  font-weight: 700;
+  display: none;
+}
+
+.status-meta {
+  display: none;
 }
 
 .status-track {
-  width: 100%;
-  height: 0.48cqw;
-  min-height: 6px;
+  flex: 1 1 auto;
+  width: auto;
+  height: 0.24cqw;
+  min-height: 3px;
   border-radius: 999px;
-  background: rgba(51, 51, 51, 0.12);
+  background: rgba(51, 51, 51, 0.14);
   overflow: hidden;
 }
 
@@ -415,7 +405,7 @@ html, body {
   width: 0;
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(90deg, var(--color-accent), var(--color-cyan));
+  background: linear-gradient(90deg, rgba(236, 0, 140, 0.82), rgba(0, 206, 209, 0.78));
   transition: width 0.24s ease;
 }
 
@@ -974,14 +964,13 @@ html, body {
   .raw-wrap, .raw-section { padding: 7% 6%; }
   .slide { padding: 4% 5%; }
   #status-bar {
-    top: 54px;
+    top: 16px;
     right: 14px;
-    width: min(48vw, 220px);
-    padding: 8px 10px;
-    gap: 5px;
+    width: min(34vw, 150px);
+    gap: 6px;
   }
   .status-track {
-    height: 7px;
+    height: 4px;
   }
   #benefits-link {
     left: 14px;
