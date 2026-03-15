@@ -14,6 +14,10 @@ Recommended Cloudflare Pages settings:
 - Build command: leave empty (`exit 0` if the dashboard requires a value)
 - Build output directory: `.`
 
+If you do not use `Root directory`, you can also leave the repository root as-is and set:
+
+- Build output directory: `slides`
+
 ## Local Structure
 
 - `slides/`: public static site for the seminar
