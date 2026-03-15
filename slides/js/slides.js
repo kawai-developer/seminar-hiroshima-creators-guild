@@ -51,12 +51,12 @@ const PRESENTATION = {
     body: "'Noto Sans JP', sans-serif"
   },
   agenda: [
-    { id: intro, label: "導入", time: "1-9" },
-    { id: types, label: "タイプ整理", time: "10-18" },
-    { id: problem, label: "問題の正体", time: "19-32" },
-    { id: pillars, label: "3つの柱", time: "33-44" },
-    { id: action, label: "実行", time: "45-59" },
-    { id: closing, label: "まとめ", time: "60-68" }
+    { id: intro, label: "導入", time: "20:00-20:08" },
+    { id: types, label: "タイプ整理", time: "20:08-20:23" },
+    { id: problem, label: "問題の正体", time: "20:23-20:44" },
+    { id: pillars, label: "3つの柱", time: "20:44-21:10" },
+    { id: action, label: "実行", time: "21:10-21:30" },
+    { id: closing, label: "まとめ", time: "21:30-22:00" }
   ],
   slides: [
     {
@@ -99,15 +99,15 @@ const PRESENTATION = {
       intro,
       wrap(`
         <h1 class="raw-title-md">目次</h1>
-        <p class="raw-agenda-summary">講義100分 + Q&amp;A 20分</p>
+        <p class="raw-agenda-summary">20:00-22:00</p>
         <ol class="raw-agenda-list raw-agenda-list--timed">
-          <li><span class="raw-agenda-item-title">はじめに / 今日の約束</span><span class="raw-agenda-item-time">8分</span></li>
-          <li><span class="raw-agenda-item-title">あなたはどのタイプ？（H/C/G）</span><span class="raw-agenda-item-time">15分</span></li>
-          <li><span class="raw-agenda-item-title">問題の正体 / 本当の敵は何か</span><span class="raw-agenda-item-time">21分</span></li>
-          <li><span class="raw-agenda-item-title">解決策デモ / 3つの柱</span><span class="raw-agenda-item-time">26分</span></li>
-          <li><span class="raw-agenda-item-title">実行 / 明日やる1アクション</span><span class="raw-agenda-item-time">20分</span></li>
-          <li><span class="raw-agenda-item-title">1%の覇気論 + 特典案内</span><span class="raw-agenda-item-time">10分</span></li>
-          <li><span class="raw-agenda-item-title">Q&amp;A</span><span class="raw-agenda-item-time">20分</span></li>
+          <li><span class="raw-agenda-item-title">はじめに / 今日の約束</span><span class="raw-agenda-item-time">20:00-20:08</span></li>
+          <li><span class="raw-agenda-item-title">あなたはどのタイプ？（H/C/G）</span><span class="raw-agenda-item-time">20:08-20:23</span></li>
+          <li><span class="raw-agenda-item-title">問題の正体 / 本当の敵は何か</span><span class="raw-agenda-item-time">20:23-20:44</span></li>
+          <li><span class="raw-agenda-item-title">解決策デモ / 3つの柱</span><span class="raw-agenda-item-time">20:44-21:10</span></li>
+          <li><span class="raw-agenda-item-title">実行 / 明日やる1アクション</span><span class="raw-agenda-item-time">21:10-21:30</span></li>
+          <li><span class="raw-agenda-item-title">1%の覇気論 + 特典案内</span><span class="raw-agenda-item-time">21:30-21:40</span></li>
+          <li><span class="raw-agenda-item-title">Q&amp;A</span><span class="raw-agenda-item-time">21:40-22:00</span></li>
         </ol>
       `, "raw-wrap--left raw-wrap--narrow"),
       "PDF page 9"

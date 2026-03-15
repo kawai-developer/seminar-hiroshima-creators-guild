@@ -185,7 +185,7 @@
     const progress = ((currentSlide + 1) / slides.length) * 100;
 
     statusAgenda.textContent = a ? a.label : "";
-    statusTime.textContent = a ? `セクション ${a.time}` : "";
+    statusTime.textContent = a ? a.time : "";
     statusNum.textContent = `${currentSlide + 1}/${slides.length}`;
     statusPercent.textContent = `${Math.round(progress)}%`;
     statusProgress.style.width = `${progress}%`;
