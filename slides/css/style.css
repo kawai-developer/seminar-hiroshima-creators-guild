@@ -562,6 +562,9 @@ html, body {
   transition: transform 0.2s ease;
 }
 #script-panel.visible { transform: translateY(0); }
+#script-text {
+  white-space: pre-wrap;
+}
 #hover-zone {
   position: absolute;
   bottom: 0; left: 0; right: 0;
