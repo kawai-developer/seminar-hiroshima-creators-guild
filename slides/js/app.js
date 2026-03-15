@@ -17,6 +17,8 @@
   const statusAgenda = document.getElementById("status-agenda");
   const statusTime = document.getElementById("status-time");
   const statusNum = document.getElementById("status-num");
+  const statusPercent = document.getElementById("status-percent");
+  const statusProgress = document.getElementById("status-progress");
   const sidebar = document.getElementById("sidebar");
   const overlay = document.getElementById("overlay");
   const sidebarList = document.getElementById("sidebar-list");
@@ -180,10 +182,13 @@
     location.hash = currentSlide + 1;
     const s = slides[currentSlide];
     const a = agenda.find((x) => x.id === s.agendaId);
+    const progress = ((currentSlide + 1) / slides.length) * 100;
 
     statusAgenda.textContent = a ? a.label : "";
-    statusTime.textContent = a ? a.time : "";
-    statusNum.textContent = `${currentSlide + 1} / ${slides.length}`;
+    statusTime.textContent = a ? `セクション ${a.time}` : "";
+    statusNum.textContent = `${currentSlide + 1}/${slides.length}`;
+    statusPercent.textContent = `${Math.round(progress)}%`;
+    statusProgress.style.width = `${progress}%`;
 
     const oldEl = slideContainer.querySelector(".slide");
     const el = renderSlide(s);

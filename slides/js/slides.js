@@ -99,16 +99,16 @@ const PRESENTATION = {
       intro,
       wrap(`
         <h1 class="raw-title-md">目次</h1>
-        ${ordered([
-          "はじめに",
-          "あなたはどのタイプ？（H/C/G）",
-          "問題の正体 — 本当の敵は何か",
-          "解決策 — 実際に見せます（3つの柱）",
-          "実行 — 明日AIに投げる1つを決める",
-          "1%の覇気論",
-          "まとめ",
-          "おわりに"
-        ])}
+        <p class="raw-agenda-summary">講義100分 + Q&amp;A 20分</p>
+        <ol class="raw-agenda-list raw-agenda-list--timed">
+          <li><span class="raw-agenda-item-title">はじめに / 今日の約束</span><span class="raw-agenda-item-time">8分</span></li>
+          <li><span class="raw-agenda-item-title">あなたはどのタイプ？（H/C/G）</span><span class="raw-agenda-item-time">15分</span></li>
+          <li><span class="raw-agenda-item-title">問題の正体 / 本当の敵は何か</span><span class="raw-agenda-item-time">21分</span></li>
+          <li><span class="raw-agenda-item-title">解決策デモ / 3つの柱</span><span class="raw-agenda-item-time">26分</span></li>
+          <li><span class="raw-agenda-item-title">実行 / 明日やる1アクション</span><span class="raw-agenda-item-time">20分</span></li>
+          <li><span class="raw-agenda-item-title">1%の覇気論 + 特典案内</span><span class="raw-agenda-item-time">10分</span></li>
+          <li><span class="raw-agenda-item-title">Q&amp;A</span><span class="raw-agenda-item-time">20分</span></li>
+        </ol>
       `, "raw-wrap--left raw-wrap--narrow"),
       "PDF page 9"
     ),

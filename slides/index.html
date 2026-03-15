@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260315-cover1">
+  <link rel="stylesheet" href="css/style.css?v=20260315-progress1">
 </head>
 <body>
   <div id="viewport">
@@ -16,9 +16,17 @@
       <div id="slide-container"></div>
 
       <div id="status-bar">
-        <span id="status-agenda"></span>
-        <span id="status-time"></span>
-        <span id="status-num"></span>
+        <div class="status-row">
+          <span id="status-agenda"></span>
+          <span id="status-num"></span>
+        </div>
+        <div class="status-track">
+          <span id="status-progress"></span>
+        </div>
+        <div class="status-row status-row-sub">
+          <span id="status-time"></span>
+          <span id="status-percent"></span>
+        </div>
       </div>
 
       <button id="menu-btn" aria-label="メニュー">
@@ -39,7 +47,7 @@
 
   <a id="benefits-link" href="tokuten/index.html" target="_blank" rel="noopener">参加特典</a>
 
-  <script src="js/slides.js?v=20260315-cover1"></script>
-  <script src="js/app.js?v=20260315-cover1"></script>
+  <script src="js/slides.js?v=20260315-progress1"></script>
+  <script src="js/app.js?v=20260315-progress1"></script>
 </body>
 </html>
