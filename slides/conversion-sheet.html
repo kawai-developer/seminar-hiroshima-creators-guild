@@ -18,7 +18,25 @@
         <a class="chip-link" href="prompts.html">プロンプト集</a>
         <a class="chip-link" href="checklist.html">チェックリスト</a>
       </div>
+      <div class="topbar-external">
+        <a href="https://x.com/kawai_design" target="_blank" rel="noopener">X</a>
+        <a href="https://note.com/kawaidesign" target="_blank" rel="noopener">note</a>
+        <a href="https://menta.work/plan/16538?ref=mentor_profile" target="_blank" rel="noopener">MENTA</a>
+        <a href="https://official-site-4ez.pages.dev" target="_blank" rel="noopener">お問い合わせ</a>
+      </div>
     </div>
+    <button class="hamburger" id="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+    <nav class="mobile-nav" id="mobile-nav">
+      <a href="index.html">特典トップ</a>
+      <a href="prompts.html">プロンプト集</a>
+      <a href="checklist.html">チェックリスト</a>
+      <a href="conversion-sheet.html">変換シート</a>
+      <hr class="mobile-nav-divider">
+      <a href="https://x.com/kawai_design" target="_blank" rel="noopener">X</a>
+      <a href="https://note.com/kawaidesign" target="_blank" rel="noopener">note</a>
+      <a href="https://menta.work/plan/16538?ref=mentor_profile" target="_blank" rel="noopener">MENTA</a>
+      <a href="https://official-site-4ez.pages.dev" target="_blank" rel="noopener">お問い合わせ</a>
+    </nav>
 
     <section class="hero-card detail-hero">
       <span class="eyebrow">参加特典 03</span>
@@ -185,5 +203,16 @@
       </aside>
     </section>
   </div>
+<script>
+  const btn = document.getElementById('hamburger');
+  const nav = document.getElementById('mobile-nav');
+  btn.addEventListener('click', () => {
+    btn.classList.toggle('is-open');
+    nav.classList.toggle('is-open');
+  });
+  nav.addEventListener('click', e => {
+    if (e.target === nav) { btn.classList.remove('is-open'); nav.classList.remove('is-open'); }
+  });
+</script>
 </body>
 </html>
