@@ -1,0 +1,505 @@
+:root {
+  --color-base: #fff0eb;
+  --color-main: #333333;
+  --color-accent: #ec008c;
+  --color-cyan: #00ced1;
+  --color-yellow: #d4a400;
+  --color-white: #ffffff;
+  --color-border: rgba(51, 51, 51, 0.12);
+  --color-muted: #777777;
+  --shadow-soft: 0 18px 60px rgba(51, 51, 51, 0.08);
+  --shadow-card: 0 10px 32px rgba(51, 51, 51, 0.08);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  color: var(--color-main);
+  background:
+    radial-gradient(circle at top left, rgba(236, 0, 140, 0.06), transparent 30%),
+    linear-gradient(180deg, #fff7f4 0%, var(--color-base) 52%, #fffaf8 100%);
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+}
+
+.page-shell {
+  width: min(1240px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 24px 0 80px;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0 20px;
+  backdrop-filter: blur(14px);
+}
+
+.topbar-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.82);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.chip-link:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-card);
+  border-color: rgba(236, 0, 140, 0.25);
+}
+
+.chip-link.is-primary {
+  background: var(--color-accent);
+  color: var(--color-white);
+  border-color: transparent;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: 24px;
+  align-items: stretch;
+  margin-top: 12px;
+}
+
+.hero-card,
+.panel,
+.content-card,
+.prompt-card,
+.sheet-card {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--color-border);
+  border-radius: 28px;
+  box-shadow: var(--shadow-soft);
+}
+
+.hero-card {
+  padding: 44px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(236, 0, 140, 0.1);
+  color: var(--color-accent);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.hero h1 {
+  margin: 20px 0 16px;
+  font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.hero p {
+  margin: 0;
+  font-size: 18px;
+  color: var(--color-muted);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.hero-side {
+  display: grid;
+  gap: 18px;
+}
+
+.panel {
+  padding: 26px;
+}
+
+.panel h2 {
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+
+.panel p,
+.panel li {
+  margin: 0;
+  font-size: 15px;
+  color: var(--color-muted);
+}
+
+.panel ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.section {
+  margin-top: 44px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.section-title h2 {
+  margin: 0;
+  font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.15;
+}
+
+.section-title p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--color-muted);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.content-card {
+  padding: 26px;
+}
+
+.content-card h3 {
+  margin: 0 0 8px;
+  font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.content-card p {
+  margin: 0 0 18px;
+  color: var(--color-muted);
+}
+
+.content-card ul {
+  padding-left: 18px;
+  margin: 0 0 22px;
+}
+
+.content-card li {
+  margin-bottom: 6px;
+}
+
+.content-card .card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.mini-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(0, 206, 209, 0.12);
+  color: #007f82;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.accent-line {
+  height: 4px;
+  width: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--color-accent), rgba(236, 0, 140, 0.12));
+  margin-bottom: 18px;
+}
+
+.detail-hero {
+  padding: 34px 38px;
+  margin-top: 8px;
+}
+
+.detail-hero h1 {
+  margin: 16px 0 10px;
+  font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+  font-size: clamp(32px, 5vw, 54px);
+  line-height: 1.12;
+}
+
+.detail-hero p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(280px, 0.45fr);
+  gap: 20px;
+  align-items: start;
+  margin-top: 28px;
+}
+
+.prompt-list,
+.sheet-list {
+  display: grid;
+  gap: 16px;
+}
+
+.prompt-card,
+.sheet-card {
+  padding: 24px;
+}
+
+.prompt-card h2,
+.sheet-card h2 {
+  margin: 0 0 8px;
+  font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+  font-size: 28px;
+  line-height: 1.18;
+}
+
+.prompt-card p,
+.sheet-card p,
+.sheet-card li {
+  color: var(--color-muted);
+}
+
+.scene {
+  margin: 10px 0 14px;
+  font-size: 14px;
+}
+
+.scene strong {
+  color: var(--color-main);
+}
+
+pre {
+  overflow-x: auto;
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: #231f20;
+  color: #fff8fc;
+  font-size: 14px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+code {
+  font-family: "SFMono-Regular", "Menlo", "Monaco", monospace;
+}
+
+.sidebar-stack {
+  display: grid;
+  gap: 16px;
+  position: sticky;
+  top: 92px;
+}
+
+.sidebar-stack .panel {
+  padding: 22px;
+}
+
+.sidebar-stack h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.sidebar-stack ol,
+.sidebar-stack ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.sidebar-stack li {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+.check-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.check-card {
+  padding: 22px;
+}
+
+.check-card h2 {
+  margin: 0 0 12px;
+  font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+  font-size: 28px;
+  line-height: 1.18;
+}
+
+.check-card ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.check-card li {
+  margin-bottom: 8px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.08);
+  text-align: left;
+  vertical-align: top;
+  font-size: 15px;
+}
+
+th {
+  background: rgba(236, 0, 140, 0.08);
+  font-weight: 700;
+}
+
+.sheet-step {
+  counter-increment: step;
+}
+
+.sheet-step::before {
+  content: counter(step);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 14px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: var(--color-white);
+  font-weight: 700;
+}
+
+.sheet-steps {
+  counter-reset: step;
+  display: grid;
+  gap: 16px;
+}
+
+.callout {
+  padding: 22px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(236, 0, 140, 0.12), rgba(0, 206, 209, 0.08));
+  border: 1px solid rgba(236, 0, 140, 0.14);
+}
+
+.callout h2 {
+  margin: 0 0 10px;
+}
+
+.footer-note {
+  margin-top: 40px;
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+@media (max-width: 1040px) {
+  .hero,
+  .detail-grid,
+  .card-grid,
+  .check-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar-stack {
+    position: static;
+  }
+}
+
+@media (max-width: 680px) {
+  .page-shell {
+    width: min(100% - 28px, 1240px);
+    padding-bottom: 56px;
+  }
+
+  .hero-card,
+  .panel,
+  .content-card,
+  .prompt-card,
+  .sheet-card,
+  .detail-hero,
+  .check-card,
+  .callout {
+    padding: 20px;
+    border-radius: 22px;
+  }
+
+  .topbar {
+    padding-top: 14px;
+  }
+
+  .chip-link {
+    width: 100%;
+  }
+
+  .topbar-links {
+    width: 100%;
+  }
+
+  .section-title {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
